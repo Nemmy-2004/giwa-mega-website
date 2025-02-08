@@ -9,53 +9,61 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212;
-            color: #e0e0e0;
+            background-color: #0a0a0a;
+            color: #d4af37;
         }
         header {
-            background: linear-gradient(135deg, #1f1f1f, #333);
-            color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1a1a, #3d3d3d);
+            color: #d4af37;
             text-align: center;
-            padding: 40px 20px;
-            font-size: 1.8em;
+            padding: 50px 20px;
+            font-size: 2em;
             letter-spacing: 2px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0px 5px 15px rgba(212, 175, 55, 0.5);
         }
         nav {
             display: flex;
             justify-content: center;
             background-color: #222;
-            padding: 15px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            box-shadow: 0px 3px 10px rgba(212, 175, 55, 0.3);
         }
         nav a {
-            color: #e0e0e0;
+            color: #d4af37;
             text-decoration: none;
-            padding: 10px 20px;
-            transition: 0.3s;
+            padding: 15px 25px;
+            font-weight: bold;
+            transition: 0.4s;
         }
         nav a:hover {
-            color: #f8b400;
-            transform: scale(1.05);
+            color: #ffffff;
+            transform: scale(1.1);
         }
         .container {
-            width: 85%;
-            margin: 50px auto;
-            background: #1e1e1e;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-            transition: 0.3s;
+            width: 80%;
+            margin: 60px auto;
+            background: rgba(30, 30, 30, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            transition: 0.4s;
         }
         .container:hover {
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+        }
+        h2 {
+            color: #d4af37;
+        }
+        ul li {
+            margin: 10px 0;
+            font-size: 1.2em;
         }
         footer {
             text-align: center;
-            padding: 20px;
-            background: #1f1f1f;
-            color: #e0e0e0;
-            margin-top: 20px;
+            padding: 25px;
+            background: #1a1a1a;
+            color: #d4af37;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -71,19 +79,19 @@
     </nav>
     <div class="container" id="home">
         <h2>Welcome to GIWA MEGA CONCEPT COMPANY LTD</h2>
-        <p>Your trusted partner in Distribution, Manufacturing, and Import/Export.</p>
+        <p>Your premium partner in Distribution, Manufacturing, and Global Trade.</p>
     </div>
     <div class="container" id="about">
         <h2>About Us</h2>
-        <p>GIWA MEGA CONCEPT COMPANY LTD is engaged in the distribution, manufacturing, and representation of leading brands. We specialize in biscuits, cookies, snacks, beverages, and renewable energy items.</p>
+        <p>GIWA MEGA CONCEPT COMPANY LTD stands at the forefront of distribution and manufacturing. We specialize in high-quality snacks, beverages, and renewable energy solutions, ensuring top-tier excellence in every service we provide.</p>
     </div>
     <div class="container" id="products">
         <h2>Our Products & Services</h2>
         <ul>
-            <li>Biscuits & Cookies</li>
-            <li>Snacks & Beverages</li>
-            <li>Burgers & Bread</li>
-            <li>Renewable Energy Solutions</li>
+            <li>Premium Biscuits & Cookies</li>
+            <li>Exclusive Snacks & Beverages</li>
+            <li>Specialty Burgers & Bread</li>
+            <li>Cutting-edge Renewable Energy Solutions</li>
         </ul>
     </div>
     <div class="container" id="contact">
