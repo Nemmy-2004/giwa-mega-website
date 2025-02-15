@@ -4,157 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GIWA MEGA CONCEPT COMPANY LTD</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #0a192f;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
             color: #ffffff;
-            overflow: hidden;
+            overflow-x: hidden;
         }
         header {
-            background: linear-gradient(135deg, #162447, #1f4068);
-            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff4c29, #1a1a1a);
             text-align: center;
-            padding: 40px;
-            font-size: 2.5em;
+            font-size: 4em;
             font-weight: bold;
-            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: fadeIn 1s ease-in-out;
         }
         nav {
             display: flex;
-            justify-content: center;
-            background-color: #1b1b2f;
-            padding: 15px;
+            justify-content: space-around;
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            padding: 20px;
             z-index: 1000;
+            transition: background 0.3s ease-in-out;
         }
         nav a {
             color: #ffffff;
             text-decoration: none;
-            padding: 15px 30px;
-            transition: 0.4s;
             font-weight: bold;
             font-size: 1.2em;
+            transition: 0.4s;
+            position: relative;
         }
-        nav a:hover {
-            color: #ff4c29;
-            transform: scale(1.2);
-        }
-        .section {
+        nav a::after {
+            content: '';
             position: absolute;
-            width: 100vw;
-            height: 100vh;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 2px;
+            background: #ffcc29;
+            transform: scaleX(0);
+            transition: transform 0.3s ease-in-out;
+        }
+        nav a:hover::after {
+            transform: scaleX(1);
+        }
+        .hero {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            height: 80vh;
             text-align: center;
-            opacity: 0;
-            transform: translateX(100vw);
-            transition: transform 1s ease, opacity 1s ease;
+            background: url('https://source.unsplash.com/1600x900/?business,corporate,innovation') no-repeat center center/cover;
+            position: relative;
         }
-        .section img {
-            max-width: 80%;
-            height: auto;
+        .hero-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            font-size: 2.5em;
+            font-weight: 600;
+            max-width: 60%;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .container {
+            width: 85%;
+            margin: 100px auto;
+            background: #141414;
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+            transition: all 0.5s;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .grid-item {
+            background: #232323;
+            padding: 30px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            text-align: center;
+            transition: transform 0.3s;
         }
-        .section.active {
-            opacity: 1;
-            transform: translateX(0);
+        .grid-item:hover {
+            transform: translateY(-10px);
         }
-        .controls {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 15px;
-        }
-        .controls button {
-            background-color: #ff4c29;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #1a1a1a;
             font-size: 1.2em;
-            border-radius: 8px;
-            transition: 0.3s;
         }
-        .controls button:hover {
-            background-color: #ff693f;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <header>
-        GIWA MEGA CONCEPT COMPANY LTD
-    </header>
+    <header>GIWA MEGA CONCEPT</header>
     <nav>
-        <a href="#" onclick="showSection(0)">Home</a>
-        <a href="#" onclick="showSection(1)">About Us</a>
-        <a href="#" onclick="showSection(2)">Products</a>
-        <a href="#" onclick="showSection(3)">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
     </nav>
-    
-    <div class="section active" id="home">
-        <img src="home.jpg" alt="Company Overview">
-        <h2>Welcome to GIWA MEGA CONCEPT</h2>
-        <p>Your trusted partner in Distribution, Manufacturing, and Import/Export.</p>
-    </div>
-    <div class="section" id="about">
-        <img src="about.jpg" alt="About Us">
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Innovate. Disrupt. Lead.</h1>
+            <p>Revolutionizing Industries with Excellence.</p>
+        </div>
+    </section>
+    <div class="container" id="about">
         <h2>About Us</h2>
-        <p>We specialize in biscuits, snacks, beverages, and renewable energy items.</p>
+        <p>At Giwa Mega Concept, we set the benchmark in innovation, distribution, and technology-driven solutions.</p>
     </div>
-    <div class="section" id="products">
-        <img src="products.jpg" alt="Our Products">
-        <h2>Our Products & Services</h2>
-        <ul>
-            <li>Biscuits & Cookies</li>
-            <li>Snacks & Beverages</li>
-            <li>Burgers & Bread</li>
-            <li>Renewable Energy Solutions</li>
-        </ul>
+    <div class="container" id="services">
+        <h2>Our Services</h2>
+        <div class="grid">
+            <div class="grid-item">Tech Solutions</div>
+            <div class="grid-item">Global Trade</div>
+            <div class="grid-item">Corporate Branding</div>
+            <div class="grid-item">Energy & Sustainability</div>
+        </div>
     </div>
-    <div class="section" id="contact">
-        <img src="contact.jpg" alt="Contact Us">
+    <div class="container" id="contact">
         <h2>Contact Us</h2>
-        <p><strong>Registered Address:</strong> House 1, AI Close, Federal Low Cost, Ikorodu, Lagos</p>
-        <p><strong>Business Address:</strong> Shop A1005, The Main Tejuosho Shopping Complex, Surulere, Lagos</p>
+        <p>Email: contact@giwamega.com | Phone: +234-000-0000</p>
     </div>
-    
-    <div class="controls">
-        <button onclick="prevSection()">Prev</button>
-        <button onclick="nextSection()">Next</button>
-    </div>
-    
-    <script>
-        let currentSection = 0;
-        const sections = document.querySelectorAll(".section");
-        
-        function showSection(index) {
-            sections[currentSection].classList.remove("active");
-            currentSection = index;
-            sections[currentSection].classList.add("active");
-        }
-        
-        function nextSection() {
-            if (currentSection < sections.length - 1) {
-                showSection(currentSection + 1);
-            }
-        }
-        
-        function prevSection() {
-            if (currentSection > 0) {
-                showSection(currentSection - 1);
-            }
-        }
-    </script>
+    <footer>
+        <p>&copy; 2024 GIWA MEGA CONCEPT. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
