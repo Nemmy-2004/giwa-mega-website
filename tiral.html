@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIWA MEGA CONCEPT COMPANY LTD</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(to right, #0d0d0d, #1a1a1a);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('header-image.jpg') no-repeat center center/cover;
+            text-align: center;
+            font-size: 3.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            color: #ff6b42;
+        }
+        header::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(20, 20, 20, 0.95);
+            padding: 15px;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(255, 107, 66, 0.3);
+        }
+        nav a {
+            color: #ff6b42;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            padding: 10px 20px;
+            transition: 0.4s;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background: #ff6b42;
+            color: #000;
+            box-shadow: 0 0 10px #ff6b42;
+        }
+        .container {
+            width: 85%;
+            margin: 100px auto;
+            background: #1c1c1c;
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(255, 107, 66, 0.2);
+            transition: all 0.5s;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .grid-item {
+            background: #292929;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            color: #ff6b42;
+            font-weight: bold;
+            border: 2px solid transparent;
+        }
+        .grid-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px rgba(255, 107, 66, 0.5);
+            border-color: #ff6b42;
+        }
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #161616;
+            font-size: 1.2em;
+            color: #ff6b42;
+            font-weight: bold;
+        }
+        .hidden {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            header {
+                font-size: 2.5em;
+            }
+            .container {
+                width: 95%;
+                padding: 30px;
+            }
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#about" onclick="showSection('about')">About</a>
+        <a href="#services" onclick="showSection('services')">Services</a>
+        <a href="#contact" onclick="showSection('contact')">Contact</a>
+    </nav>
+    <header id="home" class="content-section">
+        <div class="header-content">GIWA MEGA CONCEPT</div>
+    </header>
+    <div class="container content-section hidden" id="about">
+        <h2>About Us</h2>
+        <p>At Giwa Mega Concept, we set the benchmark in innovation, distribution, and technology-driven solutions.</p>
+    </div>
+    <div class="container content-section hidden" id="services">
+        <h2>Our Services</h2>
+        <div class="grid">
+            <div class="grid-item" onclick="showService('tech-solutions')">Tech Solutions</div>
+            <div class="grid-item" onclick="showService('global-trade')">Global Trade</div>
+            <div class="grid-item" onclick="showService('corporate-branding')">Corporate Branding</div>
+            <div class="grid-item" onclick="showService('energy-sustainability')">Energy & Sustainability</div>
+        </div>
+    </div>
+    <div class="container content-section hidden" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: contact@giwamega.com | Phone: +234-000-0000</p>
+    </div>
+    <div class="container content-section hidden" id="tech-solutions">
+        <h2>Tech Solutions</h2>
+        <p>We provide innovative technology solutions to businesses worldwide.</p>
+    </div>
+    <div class="container content-section hidden" id="global-trade">
+        <h2>Global Trade</h2>
+        <p>We connect businesses with international markets for seamless trade.</p>
+    </div>
+    <div class="container content-section hidden" id="corporate-branding">
+        <h2>Corporate Branding</h2>
+        <p>Enhance your corporate identity with our expert branding solutions.</p>
+    </div>
+    <div class="container content-section hidden" id="energy-sustainability">
+        <h2>Energy & Sustainability</h2>
+        <p>We provide eco-friendly energy solutions for a sustainable future.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 GIWA MEGA CONCEPT. All Rights Reserved.</p>
+    </footer>
+    <script>
+        function showSection(sectionId) {
+            $('.content-section').addClass('hidden');
+            $('#' + sectionId).removeClass('hidden');
+        }
+        function showService(serviceId) {
+            $('.content-section').addClass('hidden');
+            $('#' + serviceId).removeClass('hidden');
+        }
+    </script>
+</body>
+</html>
